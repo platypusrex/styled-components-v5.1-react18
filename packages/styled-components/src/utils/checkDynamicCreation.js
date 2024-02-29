@@ -17,10 +17,11 @@ export const checkDynamicCreation = (displayName: string, componentId?: string) 
     // React 17 and earlier throw an error
     // React 18 and above use console.error
 
+    // $FlowFixMe
     const originalConsoleError = console.error // eslint-disable-line no-console
     try {
       let didNotCallInvalidHook = true
-      /* $FlowIgnore[cannot-write] */
+      // $FlowFixMe
       console.error = (consoleErrorMessage, ...consoleErrorArgs) => { // eslint-disable-line no-console
         // The error here is expected, since we're expecting anything that uses `checkDynamicCreation` to
         // be called outside of a React component.
@@ -50,7 +51,7 @@ export const checkDynamicCreation = (displayName: string, componentId?: string) 
         seen.delete(message);
       }
     } finally {
-      /* $FlowIgnore[cannot-write] */
+      // $FlowFixMe
       console.error = originalConsoleError; // eslint-disable-line no-console
     }
   }
