@@ -1,5 +1,5 @@
 {
-  "name": "styled-components-project",
+  "name": "styled-components-project-v5.1-react18",
   "private": true,
   "scripts": {
     "build": "wsrun -p styled-components --exclude-missing build",
